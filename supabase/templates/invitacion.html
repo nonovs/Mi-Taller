@@ -1,0 +1,12 @@
+<div style="font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; max-width: 480px; margin: 0 auto; padding: 24px; color: #0E1116;">
+  <h2 style="margin: 0 0 8px;">Tu coche ya está en el taller 🔧</h2>
+  <p style="color: #5B6472; margin: 0 0 24px;">
+    Hola{{ if .Data.full_name }} {{ .Data.full_name }}{{ end }}. Con la app <strong>MiTaller</strong> puedes ver
+    en todo momento cómo va la reparación y los mensajes del mecánico, sin tener que llamar.
+  </p>
+  <p style="margin: 0 0 8px;">Abre la app, pulsa <strong>«Tengo un código»</strong> e introduce:</p>
+  <p style="font-size: 32px; font-weight: 700; letter-spacing: 8px; background: #FFF0E6; color: #E8590C; padding: 16px; border-radius: 12px; text-align: center; margin: 0 0 24px;">{{ .Token }}</p>
+  <p style="color: #5B6472; font-size: 13px; margin: 0;">
+    Después podrás crear tu contraseña. Si no esperabas este email, puedes ignorarlo.
+  </p>
+</div>

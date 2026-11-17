@@ -1,0 +1,12 @@
+project_id = "mitaller"
+
+[functions.redactar-aviso]
+# La función exige un usuario con sesión; además comprueba que sea del taller.
+verify_jwt = true
+
+[functions.alta-coche]
+verify_jwt = true
+
+
+[functions.nueva-clave]
+verify_jwt = true

@@ -1,11 +1,11 @@
 # MiTaller
 
-> 🚧 **Proyecto en desarrollo.** Aún no es una versión final: faltan funciones, puede haber errores y la estructura puede cambiar.
+> **Proyecto en desarrollo.** Aún no es una versión final: faltan funciones, puede haber errores y la estructura puede cambiar.
 
 Dos apps móviles que comparten la misma base de datos:
 
 - **app-cliente**: el cliente inicia sesión y ve su coche (con matrícula), el estado, los trabajos y los **mensajes del taller** en tiempo real, sin tener que llamar.
-- **app-taller**: el mecánico da de alta coches (y la cuenta del cliente), cambia estados, ordena las tareas arrastrándolas y escribe al cliente por chat. Un mensaje escrito se envía tal cual; con ✨ la IA lo redacta mejor; con el micrófono la nota de voz se transcribe (Groq Whisper) y, si la IA está activa, se pule (Claude). Todo lo que pasa por la IA se revisa antes de enviarlo.
+- **app-taller**: el mecánico da de alta coches (y la cuenta del cliente), cambia estados, ordena las tareas arrastrándolas y escribe al cliente por chat. Un mensaje escrito se envía tal cual; con el botón de IA se redacta mejor; con el micrófono la nota de voz se transcribe (Groq Whisper) y, si la IA está activa, se pule (Claude). Todo lo que pasa por la IA se revisa antes de enviarlo.
 
 ```
 app-cliente/        App del cliente (Expo SDK 58)
@@ -33,7 +33,7 @@ supabase/
 
 ## Cómo funciona un aviso
 
-1. **Texto escrito**: se envía al cliente tal cual al pulsar enviar. Con ✨ pasa antes por la IA.
+1. **Texto escrito**: se envía al cliente tal cual al pulsar enviar. Con el botón de IA pasa antes por la IA.
 2. **Nota de voz**: la Edge Function `redactar-aviso` la transcribe con Groq Whisper y, si hay `ANTHROPIC_API_KEY`, Claude la convierte en un mensaje claro. Sin clave (o si Claude falla) devuelve la transcripción literal y la app avisa de que no se ha pulido.
 3. Todo lo que pasa por la IA se muestra como borrador: el mecánico lo corrige si hace falta y pulsa **Enviar al cliente**.
 4. El cliente lo ve al momento en la ficha de su coche. El audio no se guarda; el texto original queda en `vehicle_update_sources`, que solo ve el taller.
@@ -70,8 +70,8 @@ sudo apt install -y nodejs
 Igual en Windows y Ubuntu:
 
 ```bash
-git clone https://github.com/TU_USUARIO/MiTaller.git
-cd MiTaller
+git clone https://github.com/nonovs/Mi-Taller.git
+cd Mi-Taller
 ```
 
 ### 2. Base de datos (Supabase)
